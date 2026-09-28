@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #050505;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Glowing background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: #7c00ff;
+    filter: blur(120px);
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    opacity: .5;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    background: #00eaff;
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: 10%;
+    right: 10%;
+    opacity: .4;
+}
+
+.card {
+    width: 90%;
+    max-width: 500px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(0,0,0,.5);
+    position: relative;
+    z-index: 2;
+}
+
+.profile {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#8a2be2,#00eaff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    box-shadow: 0 0 30px #7c00ff;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+.typing {
+    color: #00eaff;
+    margin: 10px 0 25px;
+    font-size: 18px;
+}
+
+p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg,#7c00ff,#00eaff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00eaff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="profile">pukie</div>
+
+    <h1>hi bby, send bilat</h1>
+
+    <div class="typing" id="typing"></div>
+
+    <p>
+      plssssss maluoy ka sakonnnnn, himuon ko tanan nga sugo mohehe
+    </p>
+
+    <div class="buttons">
+        <button onclick="about()">sendan moko?</button>
+        <button onclick="hello()">indi ka?</button>
+    </div>
+
+</div>
+
+<script>
+
+const text = "plsssss, plssssssss, plssssssssssss";
+let i = 0;
+
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 70);
+    }
+}
+
+function about() {
+    alert("yeyyyyy mwaaaaaaps iloveyousomuchhhhhbbyyy");
+}
+
+function hello() {
+    alert("indi moko labbbbbb:((");
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
